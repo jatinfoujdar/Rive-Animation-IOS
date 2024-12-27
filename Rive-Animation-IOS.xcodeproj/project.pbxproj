@@ -7,10 +7,24 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		594C57E02D1EA75A0082C1DD /* menu_button.riv in Resources */ = {isa = PBXBuildFile; fileRef = 594C57DD2D1EA75A0082C1DD /* menu_button.riv */; };
+		594C57E12D1EA75A0082C1DD /* confetti.riv in Resources */ = {isa = PBXBuildFile; fileRef = 594C57DA2D1EA75A0082C1DD /* confetti.riv */; };
+		594C57E22D1EA75A0082C1DD /* shapes.riv in Resources */ = {isa = PBXBuildFile; fileRef = 594C57DE2D1EA75A0082C1DD /* shapes.riv */; };
+		594C57E32D1EA75A0082C1DD /* icons.riv in Resources */ = {isa = PBXBuildFile; fileRef = 594C57DC2D1EA75A0082C1DD /* icons.riv */; };
+		594C57E42D1EA75A0082C1DD /* button.riv in Resources */ = {isa = PBXBuildFile; fileRef = 594C57D82D1EA75A0082C1DD /* button.riv */; };
+		594C57E52D1EA75A0082C1DD /* check.riv in Resources */ = {isa = PBXBuildFile; fileRef = 594C57D92D1EA75A0082C1DD /* check.riv */; };
+		594C57E62D1EA75A0082C1DD /* house.riv in Resources */ = {isa = PBXBuildFile; fileRef = 594C57DB2D1EA75A0082C1DD /* house.riv */; };
 		59BE0E752D1E944D00208BA8 /* RiveRuntime in Frameworks */ = {isa = PBXBuildFile; productRef = 59BE0E742D1E944D00208BA8 /* RiveRuntime */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		594C57D82D1EA75A0082C1DD /* button.riv */ = {isa = PBXFileReference; lastKnownFileType = file; path = button.riv; sourceTree = "<group>"; };
+		594C57D92D1EA75A0082C1DD /* check.riv */ = {isa = PBXFileReference; lastKnownFileType = file; path = check.riv; sourceTree = "<group>"; };
+		594C57DA2D1EA75A0082C1DD /* confetti.riv */ = {isa = PBXFileReference; lastKnownFileType = file; path = confetti.riv; sourceTree = "<group>"; };
+		594C57DB2D1EA75A0082C1DD /* house.riv */ = {isa = PBXFileReference; lastKnownFileType = file; path = house.riv; sourceTree = "<group>"; };
+		594C57DC2D1EA75A0082C1DD /* icons.riv */ = {isa = PBXFileReference; lastKnownFileType = file; path = icons.riv; sourceTree = "<group>"; };
+		594C57DD2D1EA75A0082C1DD /* menu_button.riv */ = {isa = PBXFileReference; lastKnownFileType = file; path = menu_button.riv; sourceTree = "<group>"; };
+		594C57DE2D1EA75A0082C1DD /* shapes.riv */ = {isa = PBXFileReference; lastKnownFileType = file; path = shapes.riv; sourceTree = "<group>"; };
 		59BE0E592D1E92F400208BA8 /* Rive-Animation-IOS.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "Rive-Animation-IOS.app"; sourceTree = BUILT_PRODUCTS_DIR; };
 /* End PBXFileReference section */
 
@@ -34,9 +48,24 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		594C57DF2D1EA75A0082C1DD /* RiveAssets */ = {
+			isa = PBXGroup;
+			children = (
+				594C57D82D1EA75A0082C1DD /* button.riv */,
+				594C57D92D1EA75A0082C1DD /* check.riv */,
+				594C57DA2D1EA75A0082C1DD /* confetti.riv */,
+				594C57DB2D1EA75A0082C1DD /* house.riv */,
+				594C57DC2D1EA75A0082C1DD /* icons.riv */,
+				594C57DD2D1EA75A0082C1DD /* menu_button.riv */,
+				594C57DE2D1EA75A0082C1DD /* shapes.riv */,
+			);
+			path = RiveAssets;
+			sourceTree = "<group>";
+		};
 		59BE0E502D1E92F400208BA8 = {
 			isa = PBXGroup;
 			children = (
+				594C57DF2D1EA75A0082C1DD /* RiveAssets */,
 				59BE0E5B2D1E92F400208BA8 /* Rive-Animation-IOS */,
 				59BE0E5A2D1E92F400208BA8 /* Products */,
 			);
@@ -118,6 +147,13 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				594C57E02D1EA75A0082C1DD /* menu_button.riv in Resources */,
+				594C57E12D1EA75A0082C1DD /* confetti.riv in Resources */,
+				594C57E22D1EA75A0082C1DD /* shapes.riv in Resources */,
+				594C57E32D1EA75A0082C1DD /* icons.riv in Resources */,
+				594C57E42D1EA75A0082C1DD /* button.riv in Resources */,
+				594C57E52D1EA75A0082C1DD /* check.riv in Resources */,
+				594C57E62D1EA75A0082C1DD /* house.riv in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
