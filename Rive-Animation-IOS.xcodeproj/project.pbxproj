@@ -14,6 +14,9 @@
 		594C57E42D1EA75A0082C1DD /* button.riv in Resources */ = {isa = PBXBuildFile; fileRef = 594C57D82D1EA75A0082C1DD /* button.riv */; };
 		594C57E52D1EA75A0082C1DD /* check.riv in Resources */ = {isa = PBXBuildFile; fileRef = 594C57D92D1EA75A0082C1DD /* check.riv */; };
 		594C57E62D1EA75A0082C1DD /* house.riv in Resources */ = {isa = PBXBuildFile; fileRef = 594C57DB2D1EA75A0082C1DD /* house.riv */; };
+		597F4D7E2D1EEDB50085F52F /* Inter-Regular.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 597F4D7A2D1EEDB50085F52F /* Inter-Regular.ttf */; };
+		597F4D7F2D1EEDB50085F52F /* Poppins-Bold.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 597F4D7C2D1EEDB50085F52F /* Poppins-Bold.ttf */; };
+		597F4D802D1EEDB50085F52F /* Inter-SemiBold.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 597F4D7B2D1EEDB50085F52F /* Inter-SemiBold.ttf */; };
 		59BE0E752D1E944D00208BA8 /* RiveRuntime in Frameworks */ = {isa = PBXBuildFile; productRef = 59BE0E742D1E944D00208BA8 /* RiveRuntime */; };
 /* End PBXBuildFile section */
 
@@ -25,12 +28,28 @@
 		594C57DC2D1EA75A0082C1DD /* icons.riv */ = {isa = PBXFileReference; lastKnownFileType = file; path = icons.riv; sourceTree = "<group>"; };
 		594C57DD2D1EA75A0082C1DD /* menu_button.riv */ = {isa = PBXFileReference; lastKnownFileType = file; path = menu_button.riv; sourceTree = "<group>"; };
 		594C57DE2D1EA75A0082C1DD /* shapes.riv */ = {isa = PBXFileReference; lastKnownFileType = file; path = shapes.riv; sourceTree = "<group>"; };
+		597F4D7A2D1EEDB50085F52F /* Inter-Regular.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "Inter-Regular.ttf"; sourceTree = "<group>"; };
+		597F4D7B2D1EEDB50085F52F /* Inter-SemiBold.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "Inter-SemiBold.ttf"; sourceTree = "<group>"; };
+		597F4D7C2D1EEDB50085F52F /* Poppins-Bold.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "Poppins-Bold.ttf"; sourceTree = "<group>"; };
 		59BE0E592D1E92F400208BA8 /* Rive-Animation-IOS.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "Rive-Animation-IOS.app"; sourceTree = BUILT_PRODUCTS_DIR; };
 /* End PBXFileReference section */
+
+/* Begin PBXFileSystemSynchronizedBuildFileExceptionSet section */
+		597F4D822D1EEE140085F52F /* Exceptions for "Rive-Animation-IOS" folder in "Rive-Animation-IOS" target */ = {
+			isa = PBXFileSystemSynchronizedBuildFileExceptionSet;
+			membershipExceptions = (
+				Info.plist,
+			);
+			target = 59BE0E582D1E92F400208BA8 /* Rive-Animation-IOS */;
+		};
+/* End PBXFileSystemSynchronizedBuildFileExceptionSet section */
 
 /* Begin PBXFileSystemSynchronizedRootGroup section */
 		59BE0E5B2D1E92F400208BA8 /* Rive-Animation-IOS */ = {
 			isa = PBXFileSystemSynchronizedRootGroup;
+			exceptions = (
+				597F4D822D1EEE140085F52F /* Exceptions for "Rive-Animation-IOS" folder in "Rive-Animation-IOS" target */,
+			);
 			path = "Rive-Animation-IOS";
 			sourceTree = "<group>";
 		};
@@ -62,10 +81,21 @@
 			path = RiveAssets;
 			sourceTree = "<group>";
 		};
+		597F4D7D2D1EEDB50085F52F /* Fonts */ = {
+			isa = PBXGroup;
+			children = (
+				597F4D7A2D1EEDB50085F52F /* Inter-Regular.ttf */,
+				597F4D7B2D1EEDB50085F52F /* Inter-SemiBold.ttf */,
+				597F4D7C2D1EEDB50085F52F /* Poppins-Bold.ttf */,
+			);
+			path = Fonts;
+			sourceTree = "<group>";
+		};
 		59BE0E502D1E92F400208BA8 = {
 			isa = PBXGroup;
 			children = (
 				594C57DF2D1EA75A0082C1DD /* RiveAssets */,
+				597F4D7D2D1EEDB50085F52F /* Fonts */,
 				59BE0E5B2D1E92F400208BA8 /* Rive-Animation-IOS */,
 				59BE0E5A2D1E92F400208BA8 /* Products */,
 			);
@@ -150,6 +180,9 @@
 				594C57E02D1EA75A0082C1DD /* menu_button.riv in Resources */,
 				594C57E12D1EA75A0082C1DD /* confetti.riv in Resources */,
 				594C57E22D1EA75A0082C1DD /* shapes.riv in Resources */,
+				597F4D7E2D1EEDB50085F52F /* Inter-Regular.ttf in Resources */,
+				597F4D7F2D1EEDB50085F52F /* Poppins-Bold.ttf in Resources */,
+				597F4D802D1EEDB50085F52F /* Inter-SemiBold.ttf in Resources */,
 				594C57E32D1EA75A0082C1DD /* icons.riv in Resources */,
 				594C57E42D1EA75A0082C1DD /* button.riv in Resources */,
 				594C57E52D1EA75A0082C1DD /* check.riv in Resources */,
@@ -299,6 +332,7 @@
 				DEVELOPMENT_ASSET_PATHS = "\"Rive-Animation-IOS/Preview Content\"";
 				ENABLE_PREVIEWS = YES;
 				GENERATE_INFOPLIST_FILE = YES;
+				INFOPLIST_FILE = "Rive-Animation-IOS/Info.plist";
 				INFOPLIST_KEY_UIApplicationSceneManifest_Generation = YES;
 				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
 				INFOPLIST_KEY_UILaunchScreen_Generation = YES;
@@ -327,6 +361,7 @@
 				DEVELOPMENT_ASSET_PATHS = "\"Rive-Animation-IOS/Preview Content\"";
 				ENABLE_PREVIEWS = YES;
 				GENERATE_INFOPLIST_FILE = YES;
+				INFOPLIST_FILE = "Rive-Animation-IOS/Info.plist";
 				INFOPLIST_KEY_UIApplicationSceneManifest_Generation = YES;
 				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
 				INFOPLIST_KEY_UILaunchScreen_Generation = YES;
