@@ -14,14 +14,16 @@ struct OnboardingView: View {
                         .blur(radius: 50)
                         .offset(x:200,y: 100)
                 )
-            VStack {
+            VStack(alignment: .leading, spacing: 16){
                 Text("Learn Design & Code")
                     .font(.custom("Poppins Bold", size: 60, relativeTo: .largeTitle))
                     .frame(width: 260, alignment: .leading)
+                
                 Text("Don't skip design. Learn design and code, by building real apps with React and Swift. Complete courses about best tools.")
                     .customFont()
-                    
-
+                
+                Spacer()
+                
                 button.view()
                     .frame(width: 236,height: 64)
                     .overlay(
@@ -41,6 +43,7 @@ struct OnboardingView: View {
                     }
             }
         }
+        .padding()
     }
 }
 
