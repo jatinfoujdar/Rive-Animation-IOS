@@ -21,6 +21,13 @@ struct OnboardingView: View {
                         .offset(x:4,y:4)
                         .font(.headline)
                 )
+                .background(
+                    Color.black
+                        .cornerRadius(30)
+                        .blur(radius: 10)
+                        .opacity(0.3)
+                        .offset(y: 10)
+                )
                 .onTapGesture {
                 button.play(animationName: "active")
                 }
