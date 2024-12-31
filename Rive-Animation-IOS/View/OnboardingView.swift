@@ -1,26 +1,35 @@
 import SwiftUI
 import RiveRuntime
 
-
 struct OnboardingView: View {
     let button = RiveViewModel(fileName: "button")
+    
     var body: some View {
-        ZStack{
+        ZStack {
+        
             RiveViewModel(fileName: "shapes").view()
                 .ignoresSafeArea()
                 .blur(radius: 30)
                 .background(
                     Image("Spline")
                         .blur(radius: 50)
-                        .offset(x:200,y: 100)
+                        .offset(x: 200, y: 100)
                 )
-            VStack(alignment: .leading, spacing: 16){
+            
+            VStack(alignment: .leading, spacing: 16) {
                 Text("Recipe Buddy")
                     .font(.custom("Poppins Bold", size: 60, relativeTo: .largeTitle))
                     .frame(width: 260, alignment: .leading)
                 
-                Text("Recipe Buddy is your ultimate cooking companion! Simply enter a recipe, get a complete ingredient list, and add everything to your quick commerce cart with a single tap. Meal prep has never been this easy!")
-                    .font(.headline)
+                Spacer(minLength: 40)
+                
+               
+                Image("chef5")
+                    .resizable()
+                    .scaledToFit()
+                    .frame(width: 250, height: 250)
+                
+                Spacer(minLength: 40)
                 
                 Text("Whisk it, list it, shop it—your recipe adventure starts here!")
                     .font(.title2)
@@ -28,11 +37,12 @@ struct OnboardingView: View {
                 
                 Spacer()
                 
+                
                 button.view()
-                    .frame(width: 236,height: 64)
+                    .frame(width: 236, height: 64)
                     .overlay(
-                        Label("Let’s get cookin’!",systemImage: "arrow.forward")
-                            .offset(x:4,y:4)
+                        Label("Let’s get cookin’!", systemImage: "arrow.forward")
+                            .offset(x: 4, y: 4)
                             .font(.headline)
                     )
                     .background(
@@ -46,8 +56,10 @@ struct OnboardingView: View {
                         button.play(animationName: "active")
                     }
             }
+            .padding()
+            .frame(maxWidth: .infinity, maxHeight: .infinity)
+            .multilineTextAlignment(.leading)
         }
-        .padding()
     }
 }
 
