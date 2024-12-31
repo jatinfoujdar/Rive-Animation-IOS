@@ -2,7 +2,7 @@ import SwiftUI
 import RiveRuntime
 
 struct TapBarView: View {
-    @State var selectTab : Tab = .chat
+    @AppStorage("selectTab") var selectTab : Tab = .chat
     
     let icon = RiveViewModel(fileName: "icons", stateMachineName: "CHAT_Interactivity", artboardName: "CHAT")
     
