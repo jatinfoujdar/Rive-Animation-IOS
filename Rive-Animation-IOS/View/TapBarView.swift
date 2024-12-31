@@ -2,6 +2,10 @@ import SwiftUI
 import RiveRuntime
 
 struct TapBarView: View {
+    @State var selectTab : Tab = .chat
+    
+    let icon = RiveViewModel(fileName: "icons", stateMachineName: "CHAT_Interactivity", artboardName: "CHAT")
+    
     var body: some View {
         VStack{
             Spacer()
@@ -12,9 +16,21 @@ struct TapBarView: View {
                         DispatchQueue.main.asyncAfter(deadline: .now() + 1) {
                             item.icons.setInput("active", value: false)
                         }
+                        withAnimation{
+                            selectTab = item.tab
+                        }
                     } label: {
                         item.icons.view()
                             .frame(height: 36)
+                            .opacity(selectTab == item.tab ? 1: 0.5)
+                            .background(
+                                VStack{
+                                    RoundedRectangle(cornerRadius: 2)
+                                        .frame(width: 20 ,height: 4)
+                                        .offset(y: -20)
+                                        .opacity(selectTab == item.tab ? 1 : 0)
+                                }
+                            )
                     }
                 }
             }
@@ -39,12 +55,22 @@ struct TapBarView: View {
 struct TabItem: Identifiable {
     var id = UUID()
     var icons: RiveViewModel
+    var tab : Tab
 }
 
 var tabItems = [
-    TabItem(icons: RiveViewModel(fileName: "icons", stateMachineName: "CHAT_Interactivity", artboardName: "CHAT")),
-    TabItem(icons: RiveViewModel(fileName: "icons", stateMachineName: "SEARCH_Interactivity", artboardName: "SEARCH")),
-    TabItem(icons: RiveViewModel(fileName: "icons", stateMachineName: "TIMER_Interactivity", artboardName: "TIMER")),
-    TabItem(icons: RiveViewModel(fileName: "icons", stateMachineName: "BELL_Interactivity", artboardName: "BELL")),
-    TabItem(icons: RiveViewModel(fileName: "icons", stateMachineName: "USER_Interactivity", artboardName: "USER"))
+    TabItem(icons: RiveViewModel(fileName: "icons", stateMachineName: "CHAT_Interactivity", artboardName: "CHAT"),tab: .chat),
+    TabItem(icons: RiveViewModel(fileName: "icons", stateMachineName: "SEARCH_Interactivity", artboardName: "SEARCH"),tab: .search),
+    TabItem(icons: RiveViewModel(fileName: "icons", stateMachineName: "TIMER_Interactivity", artboardName: "TIMER"), tab: .timer),
+    TabItem(icons: RiveViewModel(fileName: "icons", stateMachineName: "BELL_Interactivity", artboardName: "BELL"), tab:  .bell),
+    TabItem(icons: RiveViewModel(fileName: "icons", stateMachineName: "USER_Interactivity", artboardName: "USER"), tab: .user)
 ]
+
+
+enum Tab : String{
+    case chat
+    case search
+    case timer
+    case bell
+    case user
+}
