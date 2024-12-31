@@ -19,6 +19,8 @@
 		597F4D802D1EEDB50085F52F /* Inter-SemiBold.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 597F4D7B2D1EEDB50085F52F /* Inter-SemiBold.ttf */; };
 		59BE0E752D1E944D00208BA8 /* RiveRuntime in Frameworks */ = {isa = PBXBuildFile; productRef = 59BE0E742D1E944D00208BA8 /* RiveRuntime */; };
 		59E50E2A2D22E016005B03CF /* GoogleGenerativeAI in Frameworks */ = {isa = PBXBuildFile; productRef = 59E50E292D22E016005B03CF /* GoogleGenerativeAI */; };
+		59E8DE0D2D2449F800E33BE1 /* CourseSection.swift in Sources */ = {isa = PBXBuildFile; fileRef = 59E8DE0B2D2449F800E33BE1 /* CourseSection.swift */; };
+		59E8DE0E2D2449F800E33BE1 /* Course.swift in Sources */ = {isa = PBXBuildFile; fileRef = 59E8DE0A2D2449F800E33BE1 /* Course.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -33,6 +35,8 @@
 		597F4D7B2D1EEDB50085F52F /* Inter-SemiBold.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "Inter-SemiBold.ttf"; sourceTree = "<group>"; };
 		597F4D7C2D1EEDB50085F52F /* Poppins-Bold.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "Poppins-Bold.ttf"; sourceTree = "<group>"; };
 		59BE0E592D1E92F400208BA8 /* Rive-Animation-IOS.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "Rive-Animation-IOS.app"; sourceTree = BUILT_PRODUCTS_DIR; };
+		59E8DE0A2D2449F800E33BE1 /* Course.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Course.swift; sourceTree = "<group>"; };
+		59E8DE0B2D2449F800E33BE1 /* CourseSection.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CourseSection.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFileSystemSynchronizedBuildFileExceptionSet section */
@@ -96,6 +100,7 @@
 		59BE0E502D1E92F400208BA8 = {
 			isa = PBXGroup;
 			children = (
+				59E8DE0C2D2449F800E33BE1 /* Model */,
 				594C57DF2D1EA75A0082C1DD /* RiveAssets */,
 				597F4D7D2D1EEDB50085F52F /* Fonts */,
 				59BE0E5B2D1E92F400208BA8 /* Rive-Animation-IOS */,
@@ -109,6 +114,15 @@
 				59BE0E592D1E92F400208BA8 /* Rive-Animation-IOS.app */,
 			);
 			name = Products;
+			sourceTree = "<group>";
+		};
+		59E8DE0C2D2449F800E33BE1 /* Model */ = {
+			isa = PBXGroup;
+			children = (
+				59E8DE0A2D2449F800E33BE1 /* Course.swift */,
+				59E8DE0B2D2449F800E33BE1 /* CourseSection.swift */,
+			);
+			path = Model;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -201,6 +215,8 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				59E8DE0D2D2449F800E33BE1 /* CourseSection.swift in Sources */,
+				59E8DE0E2D2449F800E33BE1 /* Course.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
