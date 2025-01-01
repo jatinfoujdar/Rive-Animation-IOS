@@ -4,54 +4,135 @@ import GoogleGenerativeAI
 struct GeminiChatView: View {
     let model = GenerativeModel(name: "gemini-pro", apiKey: ApiKey.default)
     
-    @State var userPrompt = ""
-    @State var response = "How can I help you today?"
-    @State var isLoading = false
+    @State private var userPrompt = ""
+    @State private var response = "How can I help you today?"
+    @State private var isLoading = false
+    @State private var chatHistory: [ChatMessage] = []
     
     var body: some View {
-        VStack {
-            Text("Welcome to Gemini Ai")
-                .font(.largeTitle)
-                .fontWeight(.bold)
+        NavigationView {
+            VStack(spacing: 15) {
+           
+                Text("Spice-Genie")
+                    .font(.largeTitle)
+                    .fontWeight(.heavy)
+                    .foregroundStyle(
+                        LinearGradient(gradient: Gradient(colors: [.red, .orange]), startPoint: .leading, endPoint: .trailing)
+                    )
+                
             
-            ZStack{
-                ScrollView{
-                    Text(response)
-                        .font(.title)
+                ScrollView {
+                    VStack(alignment: .leading, spacing: 10) {
+                        ForEach(chatHistory, id: \.id) { message in
+                            MessageBubble(message: message)
+                        }
+                        
+                        if isLoading {
+                            LoadingIndicator()
+                        }
+                        
+                        Text(response)
+                            .font(.body)
+                            .foregroundColor(.secondary)
+                            .padding()
+                    }
                 }
-                if isLoading{
-                    ProgressView()
-                        .progressViewStyle(.circular)
-                        .scaleEffect(4)
+                .background(Color.gray.opacity(0.1))
+                .cornerRadius(15)
+                
+                // User Input Area
+                HStack {
+                    TextField("Ask me anything...", text: $userPrompt, axis: .vertical)
+                        .lineLimit(5)
+                        .textFieldStyle(PlainTextFieldStyle())
+                        .padding(10)
+                        .background(Color.gray.opacity(0.2))
+                        .cornerRadius(15)
+                    
+                    Button(action: generateResponse) {
+                        Image(systemName: "paperplane.fill")
+                            .foregroundColor(.white)
+                            .padding(10)
+                            .background(Color.indigo)
+                            .clipShape(Circle())
+                    }
+                    .disabled(userPrompt.isEmpty || isLoading)
+                }
+                .padding()
+            }
+            .navigationBarHidden(true)
+        }
+    }
+    
+    func generateResponse() {
+        let currentPrompt = userPrompt
+        
+        // Add user message to chat history
+        chatHistory.append(ChatMessage(text: currentPrompt, isUser: true))
+        
+        isLoading = true
+        userPrompt = ""
+        
+        Task {
+            do {
+                let result = try await model.generateContent(currentPrompt)
+                
+                await MainActor.run {
+                    isLoading = false
+                    if let responseText = result.text {
+                        chatHistory.append(ChatMessage(text: responseText, isUser: false))
+                        response = responseText
+                    }
+                }
+            } catch {
+                await MainActor.run {
+                    isLoading = false
+                    response = "Something went wrong. Please try again."
                 }
             }
-            TextField("Ask Anything...", text: $userPrompt, axis: .vertical)
-                .lineLimit(5)
-                .font(.title)
-                .padding()
-                .background(Color.indigo.opacity(0.2), in: Capsule())
-                .disableAutocorrection(true)
-                .onSubmit {
-                    generateResponse()
-                }
+        }
+    }
+}
+
+struct ChatMessage: Identifiable {
+    let id = UUID()
+    let text: String
+    let isUser: Bool
+}
+
+struct MessageBubble: View {
+    let message: ChatMessage
+    
+    var body: some View {
+        HStack {
+            if message.isUser {
+                Spacer()
+                Text(message.text)
+                    .padding()
+                    .background(Color.blue.opacity(0.1))
+                    .cornerRadius(15)
+            } else {
+                Text(message.text)
+                    .padding()
+                    .background(Color.green.opacity(0.1))
+                    .cornerRadius(15)
+                Spacer()
+            }
+        }
+        .padding(.horizontal)
+    }
+}
+
+struct LoadingIndicator: View {
+    var body: some View {
+        HStack {
+            Spacer()
+            ProgressView()
+                .progressViewStyle(CircularProgressViewStyle(tint: .indigo))
+                .scaleEffect(1.5)
+            Spacer()
         }
         .padding()
-    }
-    func generateResponse(){
-        isLoading = true
-        response = ""
-        
-        Task{
-            do{
-                let result = try await model.generateContent(userPrompt)
-                isLoading = false
-                response = result.text ?? "NO response Found"
-                userPrompt = ""
-            }
-            catch{
-                response = "somthig went wrong"
-            }
-        }
     }
 }
 
