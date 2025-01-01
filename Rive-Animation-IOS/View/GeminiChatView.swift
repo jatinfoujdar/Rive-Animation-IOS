@@ -40,14 +40,15 @@ struct GeminiChatView: View {
                 .background(Color.gray.opacity(0.1))
                 .cornerRadius(15)
                 
-                // User Input Area
+               
                 HStack {
                     TextField("Ask me anything...", text: $userPrompt, axis: .vertical)
-                        .lineLimit(5)
+                        .lineLimit(1)
                         .textFieldStyle(PlainTextFieldStyle())
                         .padding(10)
                         .background(Color.gray.opacity(0.2))
                         .cornerRadius(15)
+                        .padding(.bottom, 10) 
                     
                     Button(action: generateResponse) {
                         Image(systemName: "paperplane.fill")
@@ -59,6 +60,8 @@ struct GeminiChatView: View {
                     .disabled(userPrompt.isEmpty || isLoading)
                 }
                 .padding()
+                .padding(.bottom,70)
+
             }
             .navigationBarHidden(true)
         }

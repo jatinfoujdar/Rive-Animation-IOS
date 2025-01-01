@@ -9,7 +9,7 @@ struct ContentView: View {
                 case .chat:
                     HomeView()
                 case .search:
-                    GeminiChatView()
+                    RecipeScreenWithChat()
                 case .timer:
                     Text("Timer")
                 case .bell:
