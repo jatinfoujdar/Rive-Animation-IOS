@@ -66,7 +66,8 @@ struct RecipeScreenWithChat: View {
             }
             .padding(.vertical)
         }
-        .background(Color("Background").ignoresSafeArea()) // Custom Background Color
+        .background(Color("Background")
+            .ignoresSafeArea())
     }
     
     func generateRecipe() {

@@ -12,7 +12,7 @@ struct HomeView: View {
     }
     var content : some View{
         VStack(alignment: .leading ,spacing: 0){
-            Text("Courses")
+            Text("Trending Recipes")
                 .font(.largeTitle)
                 .fontWeight(.bold)
                 .frame(maxWidth: .infinity, alignment: .leading)
@@ -27,7 +27,7 @@ struct HomeView: View {
                 .padding(20)
                 .padding(.bottom, 10)
             }
-            Text("Recent")
+            Text("Trending Recipes")
                 .font(.title3)
                 .fontWeight(.bold)
                 .padding(.horizontal,20)
