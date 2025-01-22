@@ -1,5 +1,5 @@
 # RIVE ANIMATION
-## Here are some screenshots:
+## Here are some Gifs:
 
 <div style="display: flex; gap: 10px;">
   <img src="1.gif" alt="1" width="200" />
